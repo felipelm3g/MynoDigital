@@ -1,0 +1,347 @@
+{
+    "openapi": "3.0.1",
+    "info": {
+        "title": "Documentação - API",
+        "description": "Bem-vindo à documentação da nossa API!<br>Aqui você encontrará informações completas sobre todos os endpoints disponíveis, bem como seus parâmetros e respostas.<br>Use esta documentação para interagir com a API e criar aplicativos para atender às suas necessidades.<br>Nós nos esforçamos para mantê-la atualizada e precisa, e estamos disponíveis para ajudá-lo em qualquer dúvida ou problema.",
+        "contact": {
+            "email": "contato@myno.digital"
+        },
+        "version": "v1.0"
+    },
+    "servers": [
+        {
+            "url": "https://api.myno.digital/v1",
+            "description": "Ambiente Principal"
+        }
+    ],
+    "security": [
+        {
+            "api_key": []
+        }
+    ],
+    "tags": [
+        {
+            "name": "Cliente",
+            "description": "Gerencie tudo sobre os clientes"
+        }
+    ],
+    "paths": {
+        "/cliente/get/{codigo}": {
+            "get": {
+                "tags": [
+                    "Cliente"
+                ],
+                "summary": "Recupere dados do Cliente",
+                "operationId": "get_cliente",
+                "parameters": [
+                    {
+                        "name": "telefone",
+                        "in": "path",
+                        "description": "Telefone do Cliente",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Sucesso",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Cliente"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Erro",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "error_message": {
+                                            "type": "string",
+                                            "description": "Reason of error"
+                                        }
+                                    }
+                                },
+                                "example": {
+                                    "error_message": "Mensagem de erro"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/cliente/getbytel/{telefone}": {
+            "get": {
+                "tags": [
+                    "Cliente"
+                ],
+                "summary": "Recupere dados do Cliente com Telefone",
+                "operationId": "get_cliente",
+                "parameters": [
+                    {
+                        "name": "telefone",
+                        "in": "path",
+                        "description": "Telefone do Cliente",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Sucesso",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Cliente"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Erro",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "error_message": {
+                                            "type": "string",
+                                            "description": "Reason of error"
+                                        }
+                                    }
+                                },
+                                "example": {
+                                    "error_message": "Mensagem de erro"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/cliente/list/": {
+            "get": {
+                "tags": [
+                    "Cliente"
+                ],
+                "summary": "Lista todos clientes",
+                "operationId": "get_cliente",
+                "parameters": [
+                    {
+                        "name": "telefone",
+                        "in": "path",
+                        "description": "Telefone do Cliente",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Sucesso",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Cliente"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Erro",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "error_message": {
+                                            "type": "string",
+                                            "description": "Reason of error"
+                                        }
+                                    }
+                                },
+                                "example": {
+                                    "error_message": "Mensagem de erro"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/cliente/edit/{codigo}": {
+            "post": {
+                "tags": [
+                    "Cliente"
+                ],
+                "summary": "Edite dados do Cliente",
+                "operationId": "get_cliente",
+                "parameters": [
+                    {
+                        "name": "telefone",
+                        "in": "path",
+                        "description": "Telefone do Cliente",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Sucesso",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Cliente"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Erro",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "error_message": {
+                                            "type": "string",
+                                            "description": "Reason of error"
+                                        }
+                                    }
+                                },
+                                "example": {
+                                    "error_message": "Mensagem de erro"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/cliente/delete/{codigo}": {
+            "delete": {
+                "tags": [
+                    "Cliente"
+                ],
+                "summary": "Delete o Cliente",
+                "operationId": "get_cliente",
+                "parameters": [
+                    {
+                        "name": "telefone",
+                        "in": "path",
+                        "description": "Telefone do Cliente",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Sucesso",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Cliente"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Erro",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "error_message": {
+                                            "type": "string",
+                                            "description": "Reason of error"
+                                        }
+                                    }
+                                },
+                                "example": {
+                                    "error_message": "Mensagem de erro"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "Cliente": {
+                "type": "object",
+                "properties": {
+                    "codigo": {
+                        "title": "Código do Cliente",
+                        "type": "string",
+                        "readOnly": true
+                    },
+                    "cnpj": {
+                        "title": "Número CNPJ",
+                        "type": "string",
+                        "readOnly": true
+                    },
+                    "razao": {
+                        "title": "Razão Social",
+                        "type": "string",
+                        "readOnly": true
+                    },
+                    "endereco": {
+                        "title": "Endereço",
+                        "type": "string",
+                        "readOnly": true
+                    },
+                    "data": {
+                        "title": "Data de agendamento",
+                        "type": "string",
+                        "readOnly": true
+                    },
+                    "hora": {
+                        "title": "Hora do agendamento",
+                        "type": "string",
+                        "readOnly": true
+                    }
+                }
+            },
+            "Retorno": {
+                "type": "object",
+                "properties": {
+                    "status": {
+                        "title": "Status do Retorno",
+                        "type": "boolean",
+                        "readOnly": true,
+                        "default": false
+                    },
+                    "texto": {
+                        "title": "Texto de Retorno",
+                        "type": "string",
+                        "readOnly": true
+                    }
+                }
+            }
+        },
+        "securitySchemes": {
+            "api_key": {
+                "type": "apiKey",
+                "name": "API-KEY",
+                "in": "header"
+            }
+        }
+    }
+}

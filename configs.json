@@ -1,0 +1,26 @@
+{
+    "name": "Myno Digital",
+    "autor": "LDE Sistemas",
+    "email": "contato@myno.digital",
+    "dominio": "myno.digital",
+    "ssl": true,
+    "version": "1.0.0",
+    "logo": "img/logo-png.png",
+    "icons": [{
+            "16": "img/favicon/favicon-16x16.png",
+            "32": "img/favicon/favicon-32x32.png",
+            "57": "img/favicon/apple-icon-57x57.png",
+            "60": "img/favicon/apple-icon-60x60.png",
+            "72": "img/favicon/apple-icon-72x72.png",
+            "76": "img/favicon/apple-icon-76x76.png",
+            "96": "img/favicon/favicon-96x96.png",
+            "114": "img/favicon/apple-icon-114x114.png",
+            "120": "img/favicon/apple-icon-120x120.png",
+            "144": "img/favicon/apple-icon-144x144.png",
+            "152": "img/favicon/apple-icon-152x152.png",
+            "180": "img/favicon/apple-icon-180x180.png",
+            "192": "img/favicon/android-icon-192x192.png"
+        }],
+    "manifest": "img/favicon/manifest.json",
+    "themecolor": "#ffffff"
+}

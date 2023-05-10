@@ -1,0 +1,11 @@
+RewriteEngine On
+
+# Redirecionar as solicitações para arquivos PHP sem extensão
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.php -f
+RewriteRule ^(.*)$ $1.php [L]
+
+# Configurar as páginas de erro personalizadas
+ErrorDocument 403 /403.php
+ErrorDocument 404 /404.php
+ErrorDocument 500 /500.php

@@ -1,0 +1,30 @@
+RewriteEngine On
+
+# Redirecionar as solicitações para arquivos PHP sem extensão
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.php -f
+RewriteRule ^(.*)$ $1.php [L]
+
+# Redirecionar URLs não encontradas para o arquivo cardapio.php com o parâmetro de consulta emp
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^([^/]+)/produto/([^/]+)/?$ produto.php?emp=$1&prod=$2 [L,QSA]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^([^/]+)/carrinho$ carrinho.php?emp=$1 [L,QSA]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^([^/]+)/?([^/]*)?/?([^/]*)?/?$ cardapio.php?emp=$1&tel=$2&nome=$3 [L,QSA]
+
+# Bloquear o acesso direto ao arquivo config.js
+<Files config.js>
+    Order Allow,Deny
+    Deny from all
+</Files>
+
+# Configurar as páginas de erro personalizadas
+ErrorDocument 403 /403.php
+ErrorDocument 404 /404.php
+ErrorDocument 500 /500.php
